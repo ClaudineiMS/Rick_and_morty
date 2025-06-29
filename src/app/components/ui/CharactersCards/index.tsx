@@ -32,7 +32,7 @@ const demoTheme = createTheme({
   },
 });
 
-export default function Pagekeleton(): React.JSX.Element {
+export default function Pagekesleton(): React.JSX.Element {
   const { characters, loadCharacters, nextPage, prevPage, page } =
     useCharacters();
 

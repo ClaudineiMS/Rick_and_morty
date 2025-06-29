@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -7,15 +9,17 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-interface episodesListProps {
-  toggleDrawer: (
-    open: boolean
-  ) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+interface EpisodesListProps {
+  navigateTo: (path: string) => void;
 }
 
-export default function episodesList({
-  toggleDrawer,
-}: episodesListProps): React.JSX.Element {
+export default function EpisodesList({
+  navigateTo,
+}: EpisodesListProps): React.JSX.Element {
+  function handleClick(): void {
+    navigateTo("/episodes");
+  }
+
   return (
     <List
       subheader={
@@ -23,11 +27,10 @@ export default function episodesList({
           EPISÓDIOS
         </ListSubheader>
       }
-      onClick={toggleDrawer(false)}
       sx={{ width: 250 }}
     >
       <ListItem disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={handleClick}>
           <ListItemIcon>
             <VisibilityIcon />
           </ListItemIcon>

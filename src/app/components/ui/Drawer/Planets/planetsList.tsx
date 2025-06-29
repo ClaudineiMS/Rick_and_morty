@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -5,17 +7,19 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import PublicIcon from "@mui/icons-material/Public";
 
-interface planetstProps {
-  toggleDrawer: (
-    open: boolean
-  ) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+interface PlanetsListProps {
+  navigateTo: (path: string) => void;
 }
 
-export default function planetsList({
-  toggleDrawer,
-}: planetstProps): React.JSX.Element {
+export default function PlanetsList({
+  navigateTo,
+}: PlanetsListProps): React.JSX.Element {
+  function handleClick(): void {
+    navigateTo("/planets");
+  }
+
   return (
     <List
       subheader={
@@ -23,13 +27,12 @@ export default function planetsList({
           PLANETAS
         </ListSubheader>
       }
-      onClick={toggleDrawer(false)}
       sx={{ width: 250 }}
     >
       <ListItem disablePadding>
-        <ListItemButton>
+        <ListItemButton onClick={handleClick}>
           <ListItemIcon>
-            <AddCircleIcon />
+            <PublicIcon />
           </ListItemIcon>
           <ListItemText primary="Ver todos os planetas" />
         </ListItemButton>

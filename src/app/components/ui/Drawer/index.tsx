@@ -29,9 +29,9 @@ export default function TemporaryDrawer(): React.JSX.Element {
     <Box sx={{ width: 250 }} role="presentation">
       <CharactersList navigateTo={navigateTo} />
       <Divider />
-      {/* <PlanetsList toggleDrawer={toggleDrawer} navigateTo={navigateTo} />
+      {/* <PlanetsList navigateTo={navigateTo} />
       <Divider />
-      <EpisodesList toggleDrawer={toggleDrawer} navigateTo={navigateTo} /> */}
+      <EpisodesList navigateTo={navigateTo} /> */}
     </Box>
   );
 

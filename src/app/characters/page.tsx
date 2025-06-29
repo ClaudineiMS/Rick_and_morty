@@ -1,12 +1,12 @@
 "use client";
 
 import { CharactersProvider } from "@/app/components/context/CharactersContext";
-import Pagekeleton from "@/app/components/ui/Dashboard";
+import Pagekesleton from "@/app/components/ui/CharactersCards";
 
 export default function CharactersList(): React.JSX.Element {
   return (
     <CharactersProvider>
-      <Pagekeleton />
+      <Pagekesleton />
     </CharactersProvider>
   );
 }
