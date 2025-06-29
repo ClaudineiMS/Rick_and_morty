@@ -14,11 +14,25 @@ import { useCharacters } from "@/app/components/context/CharactersContext";
 
 const demoTheme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
+    background: {
+      default: "#0b0c2a",
+      paper: "#1b1d3c",
+    },
+    primary: {
+      main: "#7b5cff",
+    },
+    secondary: {
+      main: "#00bcd4",
+    },
+    text: {
+      primary: "#ffffff",
+      secondary: "#bdbdbd",
+    },
   },
 });
 
-export default function DashboardSkeleton(): React.JSX.Element {
+export default function Pagekeleton(): React.JSX.Element {
   const { characters, loadCharacters, nextPage, prevPage, page } =
     useCharacters();
 
@@ -35,6 +49,7 @@ export default function DashboardSkeleton(): React.JSX.Element {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
+          marginTop: "2%",
         }}
       >
         <Grid
@@ -57,7 +72,13 @@ export default function DashboardSkeleton(): React.JSX.Element {
                 mb: 2,
               }}
             >
-              <Card>
+              <Card
+                sx={{
+                  backgroundColor: "background.paper",
+                  boxShadow: 6,
+                  borderRadius: 2,
+                }}
+              >
                 <CardMedia
                   component="img"
                   height="310"

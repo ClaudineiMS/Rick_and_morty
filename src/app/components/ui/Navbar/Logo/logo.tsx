@@ -3,7 +3,7 @@
 import Box from "@mui/material/Box";
 import Image from "next/image";
 
-import georadarImg from "@/app/components/ui/Navbar/img/giphy_s.gif";
+import img from "@/app/components/ui/Navbar/img/giphy_s.gif";
 
 export default function Logo(): React.JSX.Element {
   const handleClick = (): void => {
@@ -23,7 +23,7 @@ export default function Logo(): React.JSX.Element {
       }}
     >
       <Image
-        src={georadarImg}
+        src={img}
         alt="Logo"
         width={70}
         height={70}
