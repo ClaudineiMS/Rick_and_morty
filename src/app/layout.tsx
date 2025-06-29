@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import PrimarySearchAppBar from "@/app/components/ui/Navbar";
+import { CharactersProvider } from "@/app/components/context/CharactersContext";
 
 import DashboardSkeleton from "./components/ui/Dashboard";
 
@@ -31,8 +32,9 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <PrimarySearchAppBar />
           <ContentWrapper>
-            {/* <DashBoardTolbar /> */}
-            <DashboardSkeleton />
+            <CharactersProvider>
+              <DashboardSkeleton />
+            </CharactersProvider>
             {children}
           </ContentWrapper>
         </AppRouterCacheProvider>
