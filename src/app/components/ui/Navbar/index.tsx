@@ -11,9 +11,8 @@ export default function PrimarySearchAppBar(): React.JSX.Element {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: "#0D0D0D" }}>
-        <Toolbar sx={{ minHeight: 56 }}>
+        <Toolbar sx={{ minHeight: 56, justifyContent: "center" }}>
           <Logo />
-          <Box sx={{ flexGrow: 1 }} />
         </Toolbar>
       </AppBar>
     </Box>
