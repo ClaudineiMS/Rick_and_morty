@@ -6,8 +6,12 @@ import Image from "next/image";
 import georadarImg from "@/app/components/ui/Navbar/img/giphy_s.gif";
 
 export default function Logo(): React.JSX.Element {
+  const handleClick = (): void => {
+    window.location.reload();
+  };
   return (
     <Box
+      onClick={handleClick}
       sx={{
         width: 80,
         height: 56,
